@@ -9,10 +9,9 @@ export const Collapse = ({ dataParentid=null, ariaExpanded=true, ariaControls='r
     const TRANSITION_TIME = 250;
 
     const [open, setOpen] = useState(ariaExpanded);
-    const [transition, setTransition] = useState(false);
+    // const [transition, setTransition] = useState(false);
 
-    const elref = useRef(null);
-
+    const elref = useRef();
     useEffect( () => {
         // Anything in here is fired on component mount.
         console.log(elref)
@@ -30,12 +29,12 @@ export const Collapse = ({ dataParentid=null, ariaExpanded=true, ariaControls='r
         setOpen(true);
         collapseElement.style.height = `${0}px`;
         console.log('showing', elref, collapseElement.offsetHeight, collapseElement.classList.contains(OPEN_CLASS) , collapseElement.scrollHeight, collapseElement.getBoundingClientRect().height);
-        setTransition(true);
+        collapseElement.classList.add(TRANSITION_CLASS); //setTransition(true);
         collapseElement.style.height = `${collapseElement.scrollHeight}px`;
 
         // end transition
         setTimeout(() => {
-            setTransition(false);
+            collapseElement.classList.remove(TRANSITION_CLASS); //setTransition(false);
             collapseElement.style.height = '';
         }, TRANSITION_TIME);
     }
@@ -47,12 +46,12 @@ export const Collapse = ({ dataParentid=null, ariaExpanded=true, ariaControls='r
 
         console.log('hiding', elref, collapseElement.offsetHeight, collapseElement.scrollHeight, collapseElement.getBoundingClientRect().height);
         collapseElement.style.height = `${collapseElement.scrollHeight}px`;
-        setTransition(true);
+        collapseElement.classList.add(TRANSITION_CLASS); //setTransition(true);
         collapseElement.style.height = `${0}px`;
 
         // end transition
         setTimeout(() => {
-            setTransition(false);
+            collapseElement.classList.remove(TRANSITION_CLASS); //setTransition(false);
             setOpen(false);
             collapseElement.style.height = '';
         }, TRANSITION_TIME);
@@ -72,7 +71,7 @@ export const Collapse = ({ dataParentid=null, ariaExpanded=true, ariaControls='r
             <div className='c-abaccordion'>
                 <button type='button' className='c-collapse' 
                     aria-expanded={open === true ? 'true' : 'false'} 
-                    aria-controls={ariaControls} onClick={toggle}>
+                    aria-controls={ariaControls} onClick={()=>{setOpen(!open)}}> {/* onClick={toggle}*/}
                         <div className='c-collapse__inner'>
                             <span className='-title'>Terms of use</span>
                         </div>
@@ -81,7 +80,11 @@ export const Collapse = ({ dataParentid=null, ariaExpanded=true, ariaControls='r
                 {/* data-parentid={dataParentid ? dataParentid : undefined} */}
                 {/* {...(dataParentid && {'data-parentid': dataParentid})} */}
                 {/* {className={open === true ? '-collapse -show' : '-collapse'}} */}
-                <div ref={elref} id={ariaControls} className={ `-collapse ${open===true ? OPEN_CLASS : ''} ${transition===true ? TRANSITION_CLASS : ''}` }  {...(dataParentid && {'data-parentid': dataParentid})}>
+                {/* ${transition===true ? TRANSITION_CLASS : ''} */}
+                <div ref={elref} id={ariaControls} className={ `-collapse ${open===true ? OPEN_CLASS : ''}` }   
+                {...(dataParentid && {'data-parentid': dataParentid})}
+                style={ open ? { height: `${elref.current.scrollHeight}px` } : { height: "0px" } }
+                >
                     <div className='c-accordion__container'>
                         <p>Your access to and use of this site is subject to the following terms and conditions and all applicable laws. By accessing and using this site, you accept the following terms and conditions, without limitation or qualification.</p>
                     </div>

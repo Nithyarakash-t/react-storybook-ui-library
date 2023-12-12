@@ -52,12 +52,9 @@
 
     .-collapse {
         overflow: hidden;
-        transition: max-height 2s ease-out;
-        max-height: 65px;
-        &:not(.-show) {
-            max-height: 0;
-        }
-
+        transition: height 0.2s ease-out;
+        // &:not(.-show) {
+        // }
 
         // &.-transition {
         //     height: 0;
