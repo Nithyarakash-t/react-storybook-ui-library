@@ -1,4 +1,4 @@
-.c-abaccordion {
+.c-accordion {
     border-bottom: 1px solid #dbdbdb;
 
     & .c-collapse {
@@ -51,19 +51,15 @@
     }
 
     .-collapse {
-        overflow: hidden;
-        transition: max-height 2s ease-out;
-        max-height: 65px;
         &:not(.-show) {
-            max-height: 0;
+            display: none;
         }
 
-
-        // &.-transition {
-        //     height: 0;
-        //     overflow: hidden;
-        //     transition: height 0.2s ease-out;
-        // }
+        &.-transition {
+            height: 0;
+            overflow: hidden;
+            transition: height 0.2s ease-out;
+        }
     }
 
     & .c-accordion__container {

@@ -72,7 +72,7 @@ export const Collapse = ({ dataParentid=null, ariaExpanded=true, ariaControls='r
             <div className='c-abaccordion'>
                 <button type='button' className='c-collapse' 
                     aria-expanded={open === true ? 'true' : 'false'} 
-                    aria-controls={ariaControls} onClick={()=>{setOpen(!open)}}>
+                    aria-controls={ariaControls} onClick={toggle}>
                         <div className='c-collapse__inner'>
                             <span className='-title'>Terms of use</span>
                         </div>

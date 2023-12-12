@@ -1,8 +1,8 @@
 import {useRef, useEffect} from 'react';
 import { Collapse as Collapse_class } from '../../../assets/scripts/components/layout/accordion';
-import './collapse.scss';
+import './collapse_1.scss';
 
-export const Collapse = ({ dataParentid=null, ariaExpanded=true, ariaControls='region1', ...props }) => {
+export const Collapse = ({ dataParentid=null, ariaExpanded=true, ariaControls='alt-region1', ...props }) => {
 
     const elref = useRef(null);
 
