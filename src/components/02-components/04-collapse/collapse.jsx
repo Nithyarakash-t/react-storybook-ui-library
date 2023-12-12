@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import {useState} from 'react';
 import './collapse.scss';
 
 export const Collapse = ({ dataParentid=null, ariaExpanded=true, ariaControls='region1', ...props }) => {
