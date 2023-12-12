@@ -1,8 +1,8 @@
-import { Button } from '../components/01-elements/01-button/Button';
+import { Button } from '../../components/01-elements/01-button/Button';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Components/Button',
+  title: 'Example/Elements/Button',
   component: Button,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout

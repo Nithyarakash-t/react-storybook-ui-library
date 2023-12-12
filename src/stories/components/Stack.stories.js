@@ -1,4 +1,4 @@
-import Stack from "../components/02-components/01-stack/Stack";
+import Stack from "../../components/02-components/01-stack/Stack";
 
 export default {
   title: "Example/Components/Stack",

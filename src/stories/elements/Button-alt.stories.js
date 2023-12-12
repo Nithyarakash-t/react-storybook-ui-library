@@ -1,7 +1,7 @@
-import Button from "../components/01-elements/02-button-alt/Button-alt";
+import Button from "../../components/01-elements/02-button-alt/Button-alt";
 
 export default {
-  title: 'Example/Components/Button-alt',
+  title: 'Example/Elements/Button-alt',
   component: Button,
   argTypes: { handleClick: { action: "handleClick" } },
 }

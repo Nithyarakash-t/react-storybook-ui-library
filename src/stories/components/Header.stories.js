@@ -1,4 +1,4 @@
-import { Header } from '../components/02-components/02-header/Header';
+import { Header } from '../../components/02-components/02-header/Header';
 
 export default {
   title: 'Example/Layout/Header',
