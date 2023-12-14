@@ -53,8 +53,9 @@
     .-collapse {
         overflow: hidden;
         transition: height 0.2s ease-out;
-        // &:not(.-show) {
-        // }
+        &:not(.-show) {
+            height: 0;
+        }
 
         // &.-transition {
         //     height: 0;
