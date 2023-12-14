@@ -1,7 +1,7 @@
-import { Collapse } from "../../components/02-components/04-collapse/collapse";
+import { Collapse } from "../../../components/02-components/01-layout/04-collapse/collapse";
 
 export default {
-    title: 'Example/Components/Collapse',
+    title: 'Example/Components/Layout/Collapse',
     component: Collapse,
 }
 

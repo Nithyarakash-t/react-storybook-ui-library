@@ -8,9 +8,11 @@
  */
 
 
-import { useState, useRef, useEffect } from 'react';
+import { 
+    // useState, 
+    useRef, useEffect } from 'react';
 import './collapse.scss';
-import PropTypes from "prop-types"
+import PropTypes, { element } from "prop-types"
 
 const sample_title = "Terms of Use";
 const sample_content = "Your access to and use of this site is subject to the following terms and conditions and all applicable laws. By accessing and using this site, you accept the following terms and conditions, without limitation or qualification.";
@@ -25,16 +27,14 @@ export const Collapse = (
     ) => {
 
     const OPEN_CLASS = '-show'
-    const TRANSITION_CLASS = '-transition';
-    const TRANSITION_TIME = 250;
+    // const TRANSITION_CLASS = '-transition';
+    // const TRANSITION_TIME = 250;
 
     // const [open, setOpen] = useState(ariaExpanded);
-    // const [transition, setTransition] = useState(false);
 
-    const elref = useRef();
+    const elref = useRef(null);
     useEffect( () => {
         // Anything in here is fired on component mount.
-        // console.log(elref)
         return () => {
             // Anything in here is fired on component unmount.
         }

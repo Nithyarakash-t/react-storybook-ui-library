@@ -1,5 +1,5 @@
 import {useRef, useEffect} from 'react';
-import { Collapse as Collapse_class } from '../../../assets/scripts/components/layout/accordion';
+import { Collapse as Collapse_class } from '../../../../assets/scripts/components/layout/accordion';
 import './collapse_1.scss';
 
 export const Collapse = ({ dataParentid=null, ariaExpanded=true, ariaControls='alt-region1', ...props }) => {

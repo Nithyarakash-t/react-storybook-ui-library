@@ -1,7 +1,7 @@
-import { Accordion } from "../../components/02-components/04-collapse/accordion";
+import { Accordion } from "../../../components/02-components/01-layout/04-collapse/accordion";
 
 export default {
-    title: 'Example/Components/Accordion',
+    title: 'Example/Components/Layout/Accordion',
     component: Accordion,
 }
 
